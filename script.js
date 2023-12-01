@@ -33,6 +33,17 @@ const renderCalendar = () => {
     }
     currenDate.innerText = `${months[currMonth]} ${currYear}`;
     daysTag.innerHTML = liTag
+
+      // Agregar evento de clic a cada día
+      const dayElements = document.querySelectorAll(".days li");
+      dayElements.forEach(day => {
+        day.addEventListener("click", () => {
+          const selectedDay = day.innerText;
+          alert(`Día seleccionado: ${selectedDay} de ${months[currMonth]} de ${currYear}`);
+          // Puedes hacer lo que quieras con el día seleccionado, como mostrar un mensaje o realizar alguna acción.
+        });
+      });
+
 }
 
 renderCalendar();
